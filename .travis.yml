@@ -1,3 +1,4 @@
+dist: trusty
 language: clojure
 sudo: false
 lein: lein
@@ -9,7 +10,7 @@ install:
 script:
   - lein test-all
   - ./scripts/build
-  - nvm install v6.4.0
+  - nvm install lts/*
   - node --version
   - node out/tests.js
   - lein test-lumo
@@ -20,7 +21,6 @@ branches:
 
 jdk:
   - oraclejdk8
-  - oraclejdk7
 
 notifications:
   email:
